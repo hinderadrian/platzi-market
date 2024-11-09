@@ -10,7 +10,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name="clientes")
-public class Customer {
+public class CustomerEntity {
 
     @Id
     private String id;
@@ -31,5 +31,5 @@ public class Customer {
     private String email;
 
     @OneToMany(mappedBy = "customer")
-    private List<Purchase> purchases;
+    private List<PurchaseEntity> purchaseEntities;
 }

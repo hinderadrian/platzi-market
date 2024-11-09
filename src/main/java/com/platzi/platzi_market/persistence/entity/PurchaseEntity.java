@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "compras")
-public class Purchase {
+public class PurchaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_compra")
@@ -34,8 +34,8 @@ public class Purchase {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
-    private Customer customer;
+    private CustomerEntity customerEntity;
 
     @OneToMany(mappedBy = "purchase")
-    private List<ProductPurchase> productPurchases;
+    private List<ProductPurchaseEntity> productPurchaseEntities;
 }

@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "compras_productos")
-public class ProductPurchase {
+public class ProductPurchaseEntity {
 
     @EmbeddedId
     private ProductPurchasePK id;
@@ -23,9 +23,9 @@ public class ProductPurchase {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
-    private Purchase purchase;
+    private PurchaseEntity purchaseEntity;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_producto", insertable = false, updatable = false)
-    private Product product;
+    private ProductEntity productEntity;
 }
