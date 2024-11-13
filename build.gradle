@@ -4,8 +4,8 @@ plugins {
 	id 'io.spring.dependency-management' version '1.1.6'
 }
 
-group = 'com.platzi'
-version = '0.0.1-SNAPSHOT'
+group = 'com.platzi.market'
+version = '1.0'
 
 java {
 	toolchain {
@@ -17,8 +17,24 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+	lombokVersion = '1.18.34'
+	mapStructVersion = '1.6.2'
+}
+
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation "org.mapstruct:mapstruct:$mapStructVersion"
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+
+
+	runtimeOnly 'org.postgresql:postgresql'
+	compileOnly "org.projectlombok:lombok:$lombokVersion"
+
+	annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+	annotationProcessor "org.mapstruct:mapstruct-processor:$mapStructVersion"
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
