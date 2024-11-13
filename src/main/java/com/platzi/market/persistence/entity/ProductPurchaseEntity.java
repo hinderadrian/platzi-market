@@ -1,4 +1,4 @@
-package com.platzi.platzi_market.persistence.entity;
+package com.platzi.market.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -22,6 +22,7 @@ public class ProductPurchaseEntity {
     private Boolean state;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @MapsId("purchaseId")
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     private PurchaseEntity purchaseEntity;
 

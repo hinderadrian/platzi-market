@@ -1,4 +1,4 @@
-package com.platzi.platzi_market.persistence.entity;
+package com.platzi.market.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

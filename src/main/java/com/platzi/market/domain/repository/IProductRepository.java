@@ -1,6 +1,6 @@
-package com.platzi.platzi_market.domain.repository;
+package com.platzi.market.domain.repository;
 
-import com.platzi.platzi_market.domain.Product;
+import com.platzi.market.domain.Product;
 
 import java.util.List;
 import java.util.Optional;

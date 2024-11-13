@@ -1,4 +1,4 @@
-package com.platzi.platzi_market.persistence.entity;
+package com.platzi.market.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -30,6 +30,6 @@ public class CustomerEntity {
     @Column(name = "correo_electronico")
     private String email;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customerEntity")
     private List<PurchaseEntity> purchaseEntities;
 }

@@ -1,4 +1,4 @@
-package com.platzi.platzi_market;
+package com.platzi.market;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

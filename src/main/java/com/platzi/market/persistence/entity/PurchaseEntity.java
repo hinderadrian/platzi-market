@@ -1,4 +1,4 @@
-package com.platzi.platzi_market.persistence.entity;
+package com.platzi.market.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -18,7 +18,7 @@ public class PurchaseEntity {
     private Long purchaseId;
 
     @Column(name = "id_cliente")
-    private String clientId;
+    private String customerId;
 
     @Column(name = "fecha")
     private LocalDateTime date;
@@ -36,6 +36,6 @@ public class PurchaseEntity {
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private CustomerEntity customerEntity;
 
-    @OneToMany(mappedBy = "purchase")
-    private List<ProductPurchaseEntity> productPurchaseEntities;
+    @OneToMany(mappedBy = "purchaseEntity", cascade = {CascadeType.ALL})
+    private List<ProductPurchaseEntity> productPurchasesEntity;
 }
